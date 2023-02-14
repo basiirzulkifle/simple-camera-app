@@ -75,7 +75,9 @@ video#recording {
 }
 
 .recorded.hasRecorded {
-  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .recorded > button.save {
@@ -136,11 +138,19 @@ video#recording {
   background: transparent;
 } */
 
-.top {
+/* .top {
   position: fixed;
   color: #fff;
   top: 20px;
   right: 20px;
+  z-index: 3;
+} */
+
+.top {
+  position: absolute;
+  color: #fff;
+  bottom : 85px;
+  left: calc(50% - 60px);
   z-index: 3;
 }
 
