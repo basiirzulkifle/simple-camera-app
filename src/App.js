@@ -17,7 +17,7 @@ function App() {
 
   const w = window.innerWidth;
   const h = window.innerHeight;
-  // let recordingTimeMS = 30000; // set default stop recording to 60 seconds 60000
+  let recordingTimeMS = 60; // set default stop recording to 60 seconds 60000
 
   const getVideoStream = () => {
     navigator.mediaDevices
@@ -132,7 +132,7 @@ function App() {
           setTimeout(looper, 1000);
           count++
 
-          if (count === 60) {
+          if (count === recordingTimeMS) {
             recorded = wait(0).then(
               () => recorder.state === "recording" && recorder.stop()
             );
