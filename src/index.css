@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+  background-color: #313131;
+}
+
+.camera {
+  position: relative;
+}
+
+.camera > button.cameraBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  background-position: 0%;
+  background-image: linear-gradient(to right, #844FFF 100%, #FF4F84 50%);
+  color: #fff;
+  font-weight: 700;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.result {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 0.4s;
+}
+
+.result.hasPhoto {
+  left: 0;
+}
+
+.result > button.save {
+  margin-left: 65px;
+}
+
+video {
+  width: 100%;
+  max-width: 100%;
+}
+
+.recorded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 0.4s;
+}
+
+video#recording {
+  width: 100%;
+  max-width: 100%;
+}
+
+.recorded.hasRecorded {
+  left: 0;
+}
+
+.recorded > button.save {
+  margin-left: 65px;
+}
+
+.recorded > button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  background-position: 0%;
+  background-image: linear-gradient(to right, #844FFF 100%, #FF4F84 50%);
+  color: #fff;
+  font-weight: 700;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.result > button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  background-position: 0%;
+  background-image: linear-gradient(to right, #844FFF 100%, #FF4F84 50%);
+  color: #fff;
+  font-weight: 700;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.recordingBtn > button.record {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: transparent;
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  border: 4px solid #fff;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.recordingBtn > button.recording {
+  background: crimson;
+  animation: blinker 1.5s linear infinite;
+}
+
+/* button.hasRecorded {
+  background: transparent;
+} */
+
+.top {
+  position: fixed;
+  color: #fff;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+}
+
+#stopBtn {
+  display: none;
+  background: transparent;
+  color: crimson;
+}
+
+#recordedTime {
+  color: crimson;
+  font-size: xx-large;
+  font-weight: 900;
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
